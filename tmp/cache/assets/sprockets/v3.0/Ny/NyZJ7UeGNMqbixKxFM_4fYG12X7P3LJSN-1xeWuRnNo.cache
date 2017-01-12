@@ -1,0 +1,38 @@
+I"8(function() {
+  var ready;
+
+  ready = function() {
+    $(window).scroll(function() {
+      var element, element2, height, visible;
+      element = $('#page-top-btn');
+      element2 = $('#page-top-btn2');
+      visible = element.is(':visible');
+      height = $(window).scrollTop();
+      if (height > 400) {
+        if (!visible) {
+          element.fadeIn();
+        }
+      } else {
+        element.fadeOut();
+      }
+      if (height > 200) {
+        if (!visible) {
+          return element2.fadeIn();
+        }
+      } else {
+        return element2.fadeOut();
+      }
+    });
+    return $(document).on('click', '#move-page-top', function() {
+      return $('html, body').animate({
+        scrollTop: 0
+      }, 'slow');
+    });
+  };
+
+  $(document).ready(ready);
+
+  $(document).on('page:load', ready);
+
+}).call(this);
+:ET

@@ -1,0 +1,109 @@
+<開発開始>
+sudo service postgresql start
+rails s -b $IP -p $PORT
+
+<GitHub>
+--- 最初だけ
+git init
+--- ここから
+git add -A
+git commit -m "first commit"
+--- branch作る時
+git log
+git branch
+git checkout -b develop
+git merge develop
+--- githubへpush
+git push git@github.com:kzmiyamura/achieve2.git master
+git push git@github.com:kzmiyamura/twitter.git master
+git push git@github.com:kzmiyamura/poem.git master
+git push git@github.com:kzmiyamura/poem2.git master
+git push git@github.com:kzmiyamura/blog.git master
+
+<heroku>
+--- ログイン
+heroku login
+kzk_mymr@yahoo.co.jp
+miya0216
+--- 初回
+heroku create
+
+heroku apps:info
+
+heroku open --app thawing-sierra-19469
+
+rake assets:precompile RAILS_ENV=production
+--- gem
+gem 'rails_12factor', group: :production
+
+git add -A
+git commit -m "commit201612312057"
+git push heroku master
+heroku run rake db:migrate RAILS_ENV=production
+heroku config:add SECRET_TOKEN="$(bundle exec rake secret)"
+
+<sql>
+rails c
+Blog.ids
+Blog.all
+user=User.find(4)
+user.blogs
+
+<seed>
+heroku run rake db:seed
+
+http://diveintocode.jp/diver/sign_in
+
+<mail>
+app61509141@heroku.com
+obacp2wm9319
+
+https://thawing-sierra-19469.herokuapp.com//users/confirmation?confirmation_token=Vt3VrisRgDYeWzo1boxj
+
+https://thawing-sierra-19469.herokuapp.com//users/confirmation?confirmation_token=NvC5TVUmzJphWZxdv7zB
+cxH-PobpBzA9nLMzZuX3
+
+<facebook>
+	
+acheive-develop
+APIバージョン
+v2.8
+アプリID
+1812427309020111
+app secret
+1076284c7925d3e94abfcf9ede33ac6d
+
+	
+achieve-production
+APIバージョン
+v2.8
+アプリID
+235345113542789
+app secret
+44bcd592055dd3c84067505363e6097d
+
+
+<twitter>
+
+achieve_development3
+Consumer Key (API Key) xyhu7DGsUPQTpVxVFp3VOhBHC 
+Consumer Secret (API Secret) V2wkvYXDBvIzoYvztdazkbqjGZ7xqraGbNn2qucKcL3FVfRvIE 
+Owner kzk_mymr 
+Access Level Read and write (modify app permissions) 
+Owner ID 775641642342559744
+
+achieve_development4
+Consumer Key (API Key) dbLYhiY4STUkKkjIdapZGM8nd 
+Consumer Secret (API Secret) EKu3X9NefNNLWcxW15mSPk2ONHYnKxCHzy2Ic0BLmserp21wiI 
+Access Level Read and write (modify app permissions)  
+Owner kzk_mymr 
+Owner ID 775641642342559744
+
+heroku config:add FACEBOOK_ID_DEVELOPMENT=235345113542789
+heroku config:add FACEBOOK_SECRET_DEVELOPMENT=44bcd592055dd3c84067505363e6097d
+heroku config:add TWITTER_ID_DEVELOPMENT=dbLYhiY4STUkKkjIdapZGM8nd
+heroku config:add TWITTER_SECRET_DEVELOPMENT=EKu3X9NefNNLWcxW15mSPk2ONHYnKxCHzy2Ic0BLmserp21wiI
+
+
+app secret
+
